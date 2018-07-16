@@ -8,9 +8,9 @@ import App from "./components/App";
 
 const initialState = {
   notes: [
-    { id: 1, title: "Title 1", body: "Body 1", timestamp: new Date() },
-    { id: 2, title: "Title 2", body: "Body 2", timestamp: new Date() },
-    { id: 3, title: "Title 3", body: "Body 3", timestamp: new Date() }
+    { id: 1, title: "Title 1", body: "Body 1", edited: new Date() },
+    { id: 2, title: "Title 2", body: "Body 2", edited: new Date() },
+    { id: 3, title: "Title 3", body: "Body 3", edited: new Date() }
   ]
 };
 
