@@ -1,27 +1,43 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import NoteItem from "./NoteItem";
+import * as actions from "../actions";
 
 class NotesList extends Component {
-  renderNotes() {
-    return this.props.notes.map(note => {
-      const { title, edited } = note;
-
-      return (
-        <li>
-          <div>{title}</div>
-          <div>{JSON.stringify(edited)}</div>
-        </li>
-      );
-    });
+  handleClick(id) {
+    this.props.selectNote(id);
   }
 
   render() {
-    return <ul>{this.renderNotes()}</ul>;
+    console.log();
+    const noteItems = this.props.notesList.map(note => {
+      const { id, title, edited } = note;
+      const selected = this.props.selectedNote === id;
+
+      return (
+        <NoteItem
+          key={id}
+          id={id}
+          title={title}
+          edited={edited}
+          selected={selected}
+          handleClick={this.handleClick.bind(this)}
+        />
+      );
+    });
+
+    return <ul>{noteItems}</ul>;
   }
 }
 
 const mapStateToProps = state => {
-  return { notes: state.notes };
+  return {
+    notesList: state.notes.notesList,
+    selectedNote: state.notes.selectedNote
+  };
 };
 
-export default connect(mapStateToProps)(NotesList);
+export default connect(
+  mapStateToProps,
+  actions
+)(NotesList);

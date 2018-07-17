@@ -1,0 +1,5 @@
+.note-item {}
+
+.note-item.selected {
+  background-color: #eee;
+}
