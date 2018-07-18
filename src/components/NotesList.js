@@ -9,8 +9,7 @@ class NotesList extends Component {
   }
 
   render() {
-    console.log();
-    const noteItems = this.props.notesList.map(note => {
+    const noteItems = this.props.notes.map(note => {
       const { id, title, edited } = note;
       const selected = this.props.selectedNote === id;
 
@@ -32,8 +31,8 @@ class NotesList extends Component {
 
 const mapStateToProps = state => {
   return {
-    notesList: state.notes.notesList,
-    selectedNote: state.notes.selectedNote
+    notes: state.notes,
+    selectedNote: state.selectedNote
   };
 };
 
