@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { createStore } from "redux";
 import "./css/index.css";
-import reducers from "./reducers";
+import Root from "./Root";
 
 import App from "./components/App";
 
@@ -16,15 +14,9 @@ const initialState = {
   selectedNote: 1
 };
 
-const store = createStore(
-  reducers,
-  initialState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
-
 ReactDOM.render(
-  <Provider store={store}>
+  <Root initialState={initialState}>
     <App />
-  </Provider>,
+  </Root>,
   document.getElementById("root")
 );
