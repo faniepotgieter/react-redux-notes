@@ -25,7 +25,7 @@ class NotesList extends Component {
       );
     });
 
-    return <ul>{noteItems}</ul>;
+    return <ul className="notes-list">{noteItems}</ul>;
   }
 }
 
