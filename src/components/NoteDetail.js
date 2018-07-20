@@ -1,15 +1,22 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getLongDate } from "../utils";
 
 class NoteDetail extends Component {
   render() {
+    const { body, edited } = this.props.note;
     return (
       <div className="note-detail">
-        <h2>Note Title</h2>
-        <p>Time Edited</p>
-        <textarea>Note body</textarea>
+        <hr />
+        <p>{getLongDate(edited)}</p>
+        <textarea value={body} />
       </div>
     );
   }
 }
 
-export default NoteDetail;
+const mapStateToProps = state => {
+  return { note: state.notes.byId[state.selectedNote] };
+};
+
+export default connect(mapStateToProps)(NoteDetail);

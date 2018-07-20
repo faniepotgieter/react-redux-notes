@@ -10,21 +10,18 @@ const initialState = {
     byId: {
       note1: {
         id: "note1",
-        title: "Title 1",
         body: "Body 1",
         edited: new Date()
       },
       note2: {
         id: "note2",
-        title: "Title 2",
         body: "Body 2",
-        edited: new Date()
+        edited: new Date("2018-07-19")
       },
       note3: {
         id: "note3",
-        title: "Title 3",
         body: "Body 3",
-        edited: new Date()
+        edited: new Date("2018-07-01")
       }
     },
     allIds: ["note1", "note2", "note3"]

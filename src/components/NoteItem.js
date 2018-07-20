@@ -8,7 +8,7 @@ const NoteItem = props => {
   return (
     <li className={classNames} onClick={() => handleClick(id)}>
       <div>{title}</div>
-      <div>{JSON.stringify(edited)}</div>
+      <div>{edited}</div>
     </li>
   );
 };
