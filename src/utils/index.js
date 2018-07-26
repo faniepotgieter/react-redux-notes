@@ -11,11 +11,15 @@ export const getShortDate = jsdate => {
   let formatString = "D MMM h A";
 
   if (now.day() !== date.day()) {
-    formatString = "ddd";
-  } else if (diff > 7) {
-    formatString = "D MMM";
+    if (diff >= 1 && diff <= 7) {
+      formatString = "ddd";
+    } else if (diff > 7) {
+      formatString = "D MMM";
+    } else {
+      formatString = "h:mm A";
+    }
   } else {
-    formatString = "h A";
+    formatString = "h:mm A";
   }
 
   return date.format(formatString);
