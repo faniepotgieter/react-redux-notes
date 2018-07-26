@@ -11,6 +11,7 @@ class NoteDetail extends Component {
 
   render() {
     const { body, edited } = this.props.note;
+
     return (
       <div className="note-detail">
         <hr />

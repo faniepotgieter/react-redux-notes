@@ -8,25 +8,25 @@ import App from "./components/App";
 const initialState = {
   notes: {
     byId: {
-      note1: {
-        id: "note1",
+      "note-1": {
+        id: "note-1",
         body: "Body 1",
         edited: new Date("2018-07-20")
       },
-      note2: {
-        id: "note2",
+      "note-2": {
+        id: "note-2",
         body: "Body 2",
         edited: new Date("2018-07-10")
       },
-      note3: {
-        id: "note3",
+      "note-3": {
+        id: "note-3",
         body: "Body 3",
         edited: new Date("2018-07-01")
       }
     },
-    allIds: ["note1", "note2", "note3"]
+    allIds: ["note-1", "note-2", "note-3"]
   },
-  selectedNote: "note1"
+  selectedNote: "note-1"
 };
 
 ReactDOM.render(

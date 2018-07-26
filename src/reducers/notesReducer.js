@@ -1,4 +1,4 @@
-import { CHANGE_BODY } from "../actions/types";
+import { CHANGE_BODY, NEW_NOTE } from "../actions/types";
 import { combineReducers } from "redux";
 
 const note = (state = {}, action) => {
@@ -9,20 +9,35 @@ const note = (state = {}, action) => {
         body: action.payload.body,
         edited: new Date()
       };
+
     default:
       return state;
   }
 };
 
+const addNote = (state, action) => {
+  const { id } = action.payload;
+  const newNote = {
+    ...state,
+    [id]: {
+      id,
+      body: "",
+      edited: new Date()
+    }
+  };
+
+  return newNote;
+};
+
 const byId = (state = {}, action) => {
   switch (action.type) {
     case CHANGE_BODY:
-      const { id, body } = action.payload;
+      const { id } = action.payload;
+      return { ...state, [id]: note(state[id], action) };
 
-      return {
-        ...state,
-        [id]: note(state[id], action)
-      };
+    case NEW_NOTE:
+      return addNote(state, action);
+
     default:
       return state;
   }
@@ -30,8 +45,8 @@ const byId = (state = {}, action) => {
 
 const allIds = (state = [], action) => {
   switch (action.type) {
-    case "ADD_NOTE":
-      return [...state, action.id];
+    case NEW_NOTE:
+      return [action.payload.id, ...state];
 
     default:
       return state;

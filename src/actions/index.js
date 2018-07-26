@@ -1,4 +1,4 @@
-import { SELECT_NOTE, CHANGE_BODY } from "./types";
+import { SELECT_NOTE, CHANGE_BODY, NEW_NOTE } from "./types";
 
 export const selectNote = id => {
   return {
@@ -13,6 +13,16 @@ export const changeBody = (id, body) => {
     payload: {
       id,
       body
+    }
+  };
+};
+
+export const newNote = () => {
+  const id = "note-" + new Date().getTime();
+  return {
+    type: NEW_NOTE,
+    payload: {
+      id
     }
   };
 };
