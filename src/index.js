@@ -11,12 +11,12 @@ const initialState = {
       note1: {
         id: "note1",
         body: "Body 1",
-        edited: new Date()
+        edited: new Date("2018-07-20")
       },
       note2: {
         id: "note2",
         body: "Body 2",
-        edited: new Date("2018-07-19")
+        edited: new Date("2018-07-10")
       },
       note3: {
         id: "note3",
