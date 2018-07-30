@@ -10,6 +10,9 @@ class NoteDetail extends Component {
   }
 
   render() {
+    if (!this.props.note) {
+      return <div>Select a note, or add a new note.</div>;
+    }
     const { body, edited } = this.props.note;
 
     return (
