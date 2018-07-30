@@ -32,13 +32,27 @@ class NotesList extends Component {
   }
 }
 
-const getSortedNotes = state => {
+const getSortedNoteIds = state => {
+  return state.notes.allIds.sort((a, b) => {
+    const editedA = state.notes.byId[a].edited;
+    const editedB = state.notes.byId[b].edited;
+
+    if (editedA > editedB) return -1;
+    if (editedA < editedB) return 1;
+    return 0;
+  });
+};
+
+const getNotes = state => {
   return state.notes.allIds.map(id => state.notes.byId[id]);
 };
 
 const mapStateToProps = state => {
+  const sortedNoteIds = getSortedNoteIds(state);
+  const notes = getNotes(state);
+
   return {
-    notes: getSortedNotes(state),
+    notes: notes,
     selectedNote: state.selectedNote
   };
 };
