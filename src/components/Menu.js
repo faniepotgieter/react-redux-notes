@@ -7,14 +7,24 @@ class Menu extends Component {
     return (
       <nav className="menu">
         <button onClick={() => this.props.newNote()}>new note</button>
-        <button>delete note</button>
+        <button
+          onClick={() => {
+            this.props.deleteNote(this.props.noteId);
+          }}
+        >
+          delete note
+        </button>
         <input type="text" placeholder="search notes" />
       </nav>
     );
   }
 }
 
+const mapStateToProps = state => {
+  return { noteId: state.selectedNote };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   actions
 )(Menu);
