@@ -5,7 +5,7 @@ const initialState = null;
 export default (state = initialState, action) => {
   switch (action.type) {
     case SELECT_NOTE:
-      return action.payload;
+      return action.payload.id;
 
     case NEW_NOTE:
       return action.payload.id;

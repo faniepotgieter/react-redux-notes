@@ -9,7 +9,9 @@ class Menu extends Component {
         <button onClick={() => this.props.newNote()}>new note</button>
         <button
           onClick={() => {
-            this.props.deleteNote(this.props.noteId);
+            this.props.deleteNote(this.props.noteId, () => {
+              this.props.selectNote(null);
+            });
           }}
         >
           delete note

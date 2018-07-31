@@ -1,9 +1,20 @@
 import { SELECT_NOTE, CHANGE_BODY, NEW_NOTE, DELETE_NOTE } from "./types";
 
 export const selectNote = id => {
-  return {
-    type: SELECT_NOTE,
-    payload: id
+  return (dispatch, getState) => {
+    const state = getState();
+    const allIds = state.notes.allIds;
+
+    if (!id && allIds && allIds[0]) {
+      id = allIds[0];
+    }
+
+    dispatch({
+      type: SELECT_NOTE,
+      payload: {
+        id
+      }
+    });
   };
 };
 
@@ -27,11 +38,14 @@ export const newNote = () => {
   };
 };
 
-export const deleteNote = id => {
-  return {
-    type: DELETE_NOTE,
-    payload: {
-      id
-    }
+export const deleteNote = (id, callback) => {
+  return (dispatch, getState) => {
+    dispatch({
+      type: DELETE_NOTE,
+      payload: {
+        id
+      }
+    });
+    callback();
   };
 };
