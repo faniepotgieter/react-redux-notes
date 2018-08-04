@@ -48,11 +48,19 @@ const getNotes = state => {
   return sortedNoteIds.map(id => state.notes.byId[id]);
 };
 
+const getFilteredNotes = (searchTerm, notes) => {
+  return notes.filter(note => {
+    return note.body.includes(searchTerm);
+  });
+};
+
 const mapStateToProps = state => {
   const notes = getNotes(state);
 
+  const filteredNotes = getFilteredNotes(state.searchTerm, notes);
+
   return {
-    notes: notes,
+    notes: filteredNotes,
     selectedNote: state.selectedNote
   };
 };

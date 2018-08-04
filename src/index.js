@@ -26,7 +26,8 @@ const initialState = {
     },
     allIds: ["note-1", "note-2", "note-3"]
   },
-  selectedNote: "note-1"
+  selectedNote: "note-1",
+  searchTerm: ""
 };
 
 ReactDOM.render(
