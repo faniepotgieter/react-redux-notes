@@ -16,7 +16,13 @@ class Menu extends Component {
         >
           delete note
         </button>
-        <input type="text" placeholder="search notes" />
+        <input
+          onChange={event => {
+            this.props.searchNotes(event.target.value);
+          }}
+          type="text"
+          placeholder="search notes"
+        />
       </nav>
     );
   }

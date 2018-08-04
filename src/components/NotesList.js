@@ -44,11 +44,11 @@ const getSortedNoteIds = state => {
 };
 
 const getNotes = state => {
-  return state.notes.allIds.map(id => state.notes.byId[id]);
+  const sortedNoteIds = getSortedNoteIds(state);
+  return sortedNoteIds.map(id => state.notes.byId[id]);
 };
 
 const mapStateToProps = state => {
-  const sortedNoteIds = getSortedNoteIds(state);
   const notes = getNotes(state);
 
   return {

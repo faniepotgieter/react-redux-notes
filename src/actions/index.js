@@ -1,4 +1,10 @@
-import { SELECT_NOTE, CHANGE_BODY, NEW_NOTE, DELETE_NOTE } from "./types";
+import {
+  SELECT_NOTE,
+  CHANGE_BODY,
+  NEW_NOTE,
+  DELETE_NOTE,
+  SEARCH_NOTES
+} from "./types";
 
 export const selectNote = id => {
   return (dispatch, getState) => {
@@ -47,5 +53,14 @@ export const deleteNote = (id, callback) => {
       }
     });
     callback();
+  };
+};
+
+export const searchNotes = searchTerm => {
+  return {
+    type: SEARCH_NOTES,
+    payload: {
+      searchTerm
+    }
   };
 };
