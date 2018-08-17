@@ -14,7 +14,12 @@ html {
 
 /* layout */
 .app {
+  height: 80vh;
+  max-width: 800px;
+  margin: 5vh auto;
   display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 30px 1fr;
   grid-gap: 1rem;
   grid-template-areas:
     "menu menu"

@@ -18,7 +18,7 @@ class NoteDetail extends Component {
 
     return (
       <div className="note-detail">
-        <p>{getLongDate(edited)}</p>
+        <p className="date">{getLongDate(edited)}</p>
         <textarea onChange={this.handleBodyChange.bind(this)} value={body} />
       </div>
     );
