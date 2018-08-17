@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getLongDate } from "../utils";
 import * as actions from "../actions";
+import "../css/NoteDetail.css";
 
 class NoteDetail extends Component {
   handleBodyChange(event) {
@@ -17,7 +18,6 @@ class NoteDetail extends Component {
 
     return (
       <div className="note-detail">
-        <hr />
         <p>{getLongDate(edited)}</p>
         <textarea onChange={this.handleBodyChange.bind(this)} value={body} />
       </div>

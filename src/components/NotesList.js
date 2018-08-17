@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getShortDate } from "../utils";
 import NoteItem from "./NoteItem";
 import * as actions from "../actions";
+import "../css/NotesList.css";
 
 class NotesList extends Component {
   handleClick(id) {

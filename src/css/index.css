@@ -12,3 +12,23 @@ html {
   box-sizing: border-box;
 }
 
+/* layout */
+.app {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "menu menu"
+    "notes-list note-detail";
+}
+
+.menu {
+  grid-area: menu;
+}
+
+.notes-list {
+  grid-area: notes-list;
+}
+
+.note-detail {
+  grid-area: note-detail;
+}
