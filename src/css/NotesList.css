@@ -1,3 +1,4 @@
 .notes-list {
   list-style: none;
+  overflow-y: scroll;
 }

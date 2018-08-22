@@ -12,8 +12,8 @@ const NoteItem = props => {
 
   return (
     <li className={classNames} onClick={() => handleClick(id)}>
-      <div>{formattedTitle}</div>
-      <div>{edited}</div>
+      <div className="note-item__title">{formattedTitle}</div>
+      <div className="note-item__date">{edited}</div>
     </li>
   );
 };

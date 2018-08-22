@@ -1,7 +1,14 @@
 .note-item {
   padding: 1rem;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
 }
 
 .note-item.selected {
-  background-color: #fcedaa;
+  background-color: #fff4c4;
+}
+
+.note-item__title {
+  font-weight: 700;
+  color: #333;
 }

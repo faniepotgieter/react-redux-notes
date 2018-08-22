@@ -1,0 +1,16 @@
+.menu {
+  background-color: #eee;
+  background: linear-gradient(#efefef, #ddd);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #aaa;
+}
+
+.menu input {
+  margin-left: auto;
+  padding: .5rem 1rem;
+}
+
+
